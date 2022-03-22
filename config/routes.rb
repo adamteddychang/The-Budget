@@ -5,6 +5,5 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-
-root 'groups#index'
+  root 'groups#index'
 end
