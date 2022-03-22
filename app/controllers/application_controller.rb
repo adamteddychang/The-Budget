@@ -1,3 +1,10 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  around_action :skip_bullet
+
+        def skip_bullet
+            Bullet.enable = false
+            yield
+        ensure
+            Bullet.enable = true
+        end
 end

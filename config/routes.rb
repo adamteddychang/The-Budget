@@ -5,5 +5,15 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  root 'groups#index'
+  unauthenticated do
+    root 'users#home'
+  end
+
+  root 'groups#index', as: 'spending'
+
+  resources :users
+
+  resources :groups, only: %i[index show new create destroy] do
+    resources :spendings, only: %i[new show create destroy]
+  end
 end
