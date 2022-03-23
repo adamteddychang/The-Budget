@@ -14,8 +14,159 @@
  *= require_self
  */
 
+$blue: #3778c2;
+$green: #5fb523;
+$gery-text: #434b54;
+$white-text: #fff;
+
+html {
+  margin: 0;
+}
+
 body {
-  padding: 1rem;
+  background-color: rgba(214, 214, 214, 0.884) !important;
+  color: $gery-text;
+}
+
+h3 > a {
+  color: $gery-text;
+}
+
+.navbar {
+  background-color: $blue;
+}
+
+a.nav-link.active {
+  color: $white-text;
+}
+
+h1.navbar-brand {
+  color: $white-text;
+  margin: 0 0 0 2.5rem;
+}
+
+#logo {
+  color: $white-text;
+  margin: 0;
+}
+
+.app-title {
+  color: $gery-text;
+}
+
+#thebudgetapp {
+  position: absolute;
+  top: 40%;
+  margin-left: 13%;
+  font-size: 40px;
+}
+
+#log-in-btns {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: $blue;
+}
+
+#log-in-btns .btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn.btn-primary {
+  min-width: 10rem;
+  margin-top: 10px;
+}
+
+#login {
+  border: none;
+  background-color: $blue;
+  color: $white-text;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category-block {
+  margin: 2rem 0.5rem 0;
+  padding: 0.5rem 0.5rem;
+  background-color: $white-text;
+  box-shadow: 0 1px 0 2px #e4e4e4;
+}
+
+.img-thumbnail {
+  margin: 5px;
+}
+
+.category-name {
+  min-width: 8rem;
+}
+
+.category-name p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.sum-delete {
+  min-width: 6rem;
+}
+
+.sum-delete.show {
+  min-width: 8rem;
+}
+
+.btn.delete-btn {
+  background-color: #3778c2;
+  color: #fff;
+}
+
+img.img-thumbnail {
+  min-width: 4.5rem;
+}
+
+.login-form {
+  width: 100%;
+  font-size: 22px;
+  min-height: 3.5rem;
+}
+
+#forgot-ps {
+  text-decoration: none;
+  color: $gery-text;
+}
+
+.fa {
+  color: $white-text;
+}
+
+.add-btn-con {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: $green;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  font-size: 17px;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 15px;
+  width: 70%;
 }
 
 @import "bootstrap";

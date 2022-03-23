@@ -1,45 +1,31 @@
-<% if @groups.any?%>
-<% @groups.each do |group| %>
-
-
-
-<div class="">
-  <div class="">
-    <%=image_tag "#{group.icon}" ,class:"", width: "50px", height: "auto"%>
-    <ul class="">
-      <li>
-        <p><%= link_to group.name, group_path(group), class:"" %></p>
-      </li>
-      <li>
-        <p class=""> <%= group.created_at.strftime("%Y-%b-%d")%></p>
-      </li>
-    </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid justify-content-between">
+    <div>
+    </div>
+    <h1 class= 'navbar-brand' >CATEGORIES</h1>
+    <%= render 'layouts/navbar'%>
   </div>
-
-
-  <ul class="">
-    <li>
-      <p class=""> Sum: $<%= group.spendings.sum(:amount)%></p>
-    </li>
-    <li>
-      <%if can? :destroy, group%>
-      <%=button_to "Delete", group_path(group.id), method: :delete, class:""%>
-      <%end%>
-    </li>
-  </ul>
-
-
-
-
-</div>
-<%end%>
-
-
+</nav>
+<p class="notice text-center"><%= notice %></p>
+<% if @groups.any?%>
+  <% @groups.each do |group| %>
+    <div class="d-flex flex-row justify-content-between category-block">
+      <%=image_tag "#{group.icon}" ,class:"img-thumbnail", width: "50px", height: "50px", alt:"icon"%>
+      <div class="category-name d-flex flex-column justify-content-between">
+        <h3><%= link_to group.name, group_path(group), class:"" %></h3>
+        <p class=""> <%= group.created_at.strftime("%Y-%b-%d")%></p>
+      </div>
+      <div class="sum-delete">
+        <p class=""> Sum: $<%= group.spendings.sum(:amount)%></p>
+        <%if can? :destroy, group%>
+          <%=button_to "Delete", group_path(group.id), method: :delete, class:"btn delete-btn"%>
+        <%end%>
+      </div>
+    </div>
+  <%end%>
 <%else%>
-<p class="">No existing category. Please add a category</p>
+  <p class="text-center">No existing category. Please add a category</p>
 <%end%>
-
-
-<div class="">
-  <%= link_to "Add Category", new_group_path, class: ""%>
+<div class="add-btn-con container">
+  <%= link_to "Add Category", new_group_path, class: "add-button"%>
 </div>
