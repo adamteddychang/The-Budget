@@ -83,11 +83,10 @@ h1.navbar-brand {
   margin-top: 10px;
 }
 
-
- #login{
-border: none;
-background-color: $blue;
-color: $white-text;
+#login {
+  border: none;
+  background-color: $blue;
+  color: $white-text;
 }
 
 ul {
@@ -137,6 +136,7 @@ img.img-thumbnail {
   font-size: 22px;
   min-height: 3.5rem;
 }
+
 #forgot-ps {
   text-decoration: none;
   color: $gery-text;

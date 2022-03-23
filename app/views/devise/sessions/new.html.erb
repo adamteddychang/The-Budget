@@ -1,7 +1,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid justify-content-between">
     <div class="d-flex align-items-center">
-      <p class="notice text-center"><%= notice %></p>
       <a href="/"><i class="fa fa-arrow-left"></i></a>
     </div>
     <h1 class= 'navbar-brand' >LOGIN</h1>
@@ -20,4 +19,6 @@
     <%= link_to "Forgot your password?", new_password_path(resource_name),id:'forgot-ps' %><br />
     </div>
   <% end %>
+    <p class="notice text-center"><%= notice %><%=alert%></p>
+
 </section>
