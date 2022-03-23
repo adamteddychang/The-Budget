@@ -2,9 +2,9 @@
 
 
 
-<ul class="">
+ <ul class="">
    <li>
-   <%=image_tag "#{@group.icon}" ,class:"", width: "50px", height: "auto"%>
+     <%=image_tag "#{@group.icon}" ,class:"", width: "50px", height: "auto"%>
    </li>
  </ul>
 
@@ -54,5 +54,5 @@
 
 
  <div class="">
-   <%= link_to "Add transaction",  new_group_spending_path( @group), class: ""%>
+   <%= link_to "Add transaction",  new_group_spending_path(@group), class: ""%>
  </div>
