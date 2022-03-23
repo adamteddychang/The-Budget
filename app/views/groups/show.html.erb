@@ -1,8 +1,8 @@
    <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid justify-content-between">
-  <div>
-  </div>
-  <h1 class= 'navbar-brand' >CATEGORY DETAILS</h1>
+    <div>
+    </div>
+    <h1 class= 'navbar-brand' >CATEGORY DETAILS</h1>
     <%= render 'layouts/navbar'%>
   </div>
 </nav>
@@ -26,11 +26,11 @@
           <%=button_to "Delete", group_spending_path(group_id: @group.id, id: spend.id), method: :delete, class:"btn delete-btn"%>
         <%end%>
       </div>
-      </div>
-    <%end%>
-  <%else%>
-    <p class="">There are no transactions for this category</p>
+    </div>
   <%end%>
-  <div class="add-btn-con container">
-    <%= link_to "Add Expense",  new_group_spending_path(@group), class: "add-button"%>
-  </div>
+<%else%>
+  <p class="">There are no transactions for this category</p>
+<%end%>
+<div class="add-btn-con container">
+  <%= link_to "Add Expense",  new_group_spending_path(@group), class: "add-button"%>
+</div>

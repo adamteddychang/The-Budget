@@ -6,23 +6,18 @@
     <%= render 'layouts/navbar'%>
   </div>
 </nav>
-
 <p class="notice text-center"><%= notice %></p>
 <p class="alert text-center"><%= alert %></p>
-
-
 <section  class="d-flex flex-column align-items-center">
-<%= form_with model: [@group, @group.spendings.create], class:"input-form", data: { turbo: "false" }  do |f|%>
-  <div class="mb-3">
-    <%= f.text_field :name,required: true, class:"form-control ", placeholder: "Name", id: ""%><br>
-  </div>
-  <div class="mb-3">
-    <%= f.number_field :amount ,  class:"form-control" , required: true, placeholder: 'Amount',  min: 1%><br>
-  </div>
-  <div class="mb-3 text-center">
-  <%= f.submit "Add Expense", class:"btn btn-primary", data: { turbo: "false" } %>
-  </div>
-<%end%>
-
-
+  <%= form_with model: [@group, @group.spendings.create], class:"input-form", data: { turbo: "false" }  do |f|%>
+    <div class="mb-3">
+      <%= f.text_field :name,required: true, class:"form-control ", placeholder: "Name", id: ""%><br>
+    </div>
+    <div class="mb-3">
+      <%= f.number_field :amount ,  class:"form-control" , required: true, placeholder: 'Amount',  min: 1%><br>
+    </div>
+    <div class="mb-3 text-center">
+      <%= f.submit "Add Expense", class:"btn btn-primary", data: { turbo: "false" } %>
+    </div>
+  <%end%>
 </section>
