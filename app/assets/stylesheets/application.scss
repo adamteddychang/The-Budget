@@ -54,18 +54,40 @@ h1.navbar-brand {
   color: $gery-text;
 }
 
+#thebudgetapp {
+  position: absolute;
+  top: 40%;
+  margin-left: 13%;
+  font-size: 40px;
+}
+
 #log-in-btns {
   align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: $blue;
 }
 
 #log-in-btns .btn {
-  min-width: 10rem;
-  margin: 10px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .btn.btn-primary {
   min-width: 10rem;
   margin-top: 10px;
+}
+
+
+ #login{
+border: none;
+background-color: $blue;
+color: $white-text;
 }
 
 ul {
@@ -85,7 +107,7 @@ ul {
 }
 
 .category-name {
-  min-width: 10rem;
+  min-width: 8rem;
 }
 
 .category-name p {
@@ -93,9 +115,35 @@ ul {
   font-size: 12px;
 }
 
+.sum-delete {
+  min-width: 6rem;
+}
+
+.sum-delete.show {
+  min-width: 8rem;
+}
+
 .btn.delete-btn {
   background-color: #3778c2;
   color: #fff;
+}
+
+img.img-thumbnail {
+  min-width: 4.5rem;
+}
+
+.login-form {
+  width: 100%;
+  font-size: 22px;
+  min-height: 3.5rem;
+}
+#forgot-ps {
+  text-decoration: none;
+  color: $gery-text;
+}
+
+.fa {
+  color: $white-text;
 }
 
 .add-btn-con {

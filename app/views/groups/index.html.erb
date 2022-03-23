@@ -15,7 +15,7 @@
         <h3><%= link_to group.name, group_path(group), class:"" %></h3>
         <p class=""> <%= group.created_at.strftime("%Y-%b-%d")%></p>
       </div>
-      <div>
+      <div class="sum-delete">
         <p class=""> Sum: $<%= group.spendings.sum(:amount)%></p>
         <%if can? :destroy, group%>
           <%=button_to "Delete", group_path(group.id), method: :delete, class:"btn delete-btn"%>
@@ -24,7 +24,7 @@
     </div>
   <%end%>
 <%else%>
-  <p class="">No existing category. Please add a category</p>
+  <p class="text-center">No existing category. Please add a category</p>
 <%end%>
 <div class="add-btn-con container">
   <%= link_to "Add Category", new_group_path, class: "add-button"%>
