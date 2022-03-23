@@ -1,19 +1,28 @@
+  <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid justify-content-between">
+    <div>
+    </div>
+    <h1 class= 'navbar-brand' >ADD EXPENSE</h1>
+    <%= render 'layouts/navbar'%>
+  </div>
+</nav>
+
+<p class="notice text-center"><%= notice %></p>
+<p class="alert text-center"><%= alert %></p>
+
+
+<section  class="d-flex flex-column align-items-center">
 <%= form_with model: [@group, @group.spendings.create], class:"input-form", data: { turbo: "false" }  do |f|%>
-
-
-
-
-<div class="">
-  <%= f.text_field :name,required: true, class:"", placeholder: "Name", id: ""%><br>
-</div>
-
-
-
-<div class="">
-  <%= f.number_field :amount ,  class:"" , required: true, placeholder: 'Amount',  min: 1%><br>
-</div>
-
-<%= f.submit "Create Spending", class:"", data: { turbo: "false" } %>
-
-
+  <div class="mb-3">
+    <%= f.text_field :name,required: true, class:"form-control ", placeholder: "Name", id: ""%><br>
+  </div>
+  <div class="mb-3">
+    <%= f.number_field :amount ,  class:"form-control" , required: true, placeholder: 'Amount',  min: 1%><br>
+  </div>
+  <div class="mb-3 text-center">
+  <%= f.submit "Add Expense", class:"btn btn-primary", data: { turbo: "false" } %>
+  </div>
 <%end%>
+
+
+</section>

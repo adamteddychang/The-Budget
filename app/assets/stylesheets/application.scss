@@ -14,8 +14,111 @@
  *= require_self
  */
 
+$blue: #3778c2;
+$green: #5fb523;
+$gery-text: #434b54;
+$white-text: #fff;
+
+html {
+  margin: 0;
+}
+
 body {
-  padding: 1rem;
+  background-color: rgba(214, 214, 214, 0.884) !important;
+  color: $gery-text;
+}
+
+h3 > a {
+  color: $gery-text;
+}
+
+.navbar {
+  background-color: $blue;
+}
+
+a.nav-link.active {
+  color: $white-text;
+}
+
+h1.navbar-brand {
+  color: $white-text;
+  margin: 0 0 0 2.5rem;
+}
+
+#logo {
+  color: $white-text;
+  margin: 0;
+}
+
+.app-title {
+  color: $gery-text;
+}
+
+#log-in-btns {
+  align-items: center;
+}
+
+#log-in-btns .btn {
+  min-width: 10rem;
+  margin: 10px;
+}
+
+.btn.btn-primary {
+  min-width: 10rem;
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category-block {
+  margin: 2rem 0.5rem 0;
+  padding: 0.5rem 0.5rem;
+  background-color: $white-text;
+  box-shadow: 0 1px 0 2px #e4e4e4;
+}
+
+.img-thumbnail {
+  margin: 5px;
+}
+
+.category-name {
+  min-width: 10rem;
+}
+
+.category-name p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.btn.delete-btn {
+  background-color: #3778c2;
+  color: #fff;
+}
+
+.add-btn-con {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: $green;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  font-size: 17px;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 15px;
+  width: 70%;
 }
 
 @import "bootstrap";

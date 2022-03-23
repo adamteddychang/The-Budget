@@ -1,9 +1,18 @@
-  <h1 class="">The Budget App</h1>
-  <div class="">
-    <button class=''>
-      <%= link_to "LOG IN", new_user_session_path%>
-    </button>
-    <button class=''>
-      <%= link_to "SIGN UP", new_user_registration_path %>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid justify-content-center">
+  <%=link_to 'The Budget', root_path, class: 'navbar-brand', id:"logo"%>
+
+    <%= render 'layouts/navbar'%>
   </div>
+</nav>
+<p class="notice text-center"><%= notice %></p>
+<p class="alert text-center"><%= alert %></p>
+<h1 class="text-center app-title">The Budget App</h1>
+<div class="d-flex flex-column" id="log-in-btns">
+  <button type = "button" class='btn'>
+    <%= link_to "LOG IN", new_user_session_path, class:"btn btn-primary"%>
+  </button>
+  <button type = "button" class='btn'>
+    <%= link_to "SIGN UP", new_user_registration_path,class:"btn btn-primary" %>
+  </button>
+</div>

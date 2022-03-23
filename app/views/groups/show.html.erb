@@ -1,58 +1,36 @@
- <h2 class="">Category Details</h2>
-
-
-
- <ul class="">
-   <li>
-     <%=image_tag "#{@group.icon}" ,class:"", width: "50px", height: "auto"%>
-   </li>
- </ul>
-
- <ul class="">
-   <li>
-     <p class="">Category: <%= @group.name%></p>
-   </li>
- </ul>
- <ul class="">
-   <li>
-     <p class="">Sum: $<%= @group.spendings.sum(:amount)%></p>
-   </li>
-
- </ul>
-
-
- <% if @group.spendings.any? %>
-
-
- <% @group.spendings.order(created_at:'DESC').each do |spend|%>
- <div class="">
-   <ul class="">
-     <li>
-       <p class=""><%= spend.name%></p>
-     </li>
-     <li>
-       <p class="">Created At: <%= spend.created_at.strftime("%Y-%b-%d")%></p>
-     </li>
-   </ul>
-   <ul class="">
-     <li>
-       <p class="">Amount: $<%= spend.amount%></p>
-     </li>
-     <li>
-       <%if can? :destroy, spend%>
-       <%=button_to "Delete", group_spending_path(group_id: @group.id, id: spend.id), method: :delete, class:""%>
-       <%end%>
-     </li>
-   </ul>
- </div>
- <%end%>
-
-
- <%else%>
- <p class="">There are no transactions for this category</p>
- <%end%>
-
-
- <div class="">
-   <%= link_to "Add transaction",  new_group_spending_path(@group), class: ""%>
- </div>
+   <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid justify-content-between">
+  <div>
+  </div>
+  <h1 class= 'navbar-brand' >CATEGORY DETAILS</h1>
+    <%= render 'layouts/navbar'%>
+  </div>
+</nav>
+<div class="d-flex flex-row justify-content-around category-block">
+  <%=image_tag "#{@group.icon}" ,class:"img-thumbnail", width: "50px", height: "50px", alt:"icon"%>
+  <div class="category-name d-flex flex-column justify-content-around">
+    <h3>Category: <%= @group.name%></h3>
+    <p class=""> Sum: $<%= @group.spendings.sum(:amount)%></p>
+  </div>
+</div>
+<% if @group.spendings.any? %>
+  <% @group.spendings.order(created_at:'DESC').each do |spend|%>
+    <div class="d-flex flex-row justify-content-between category-block">
+      <div class="category-name d-flex flex-column justify-content-between">
+        <h3 class=""><%= spend.name%></h3>
+        <p class="">Created At: <%= spend.created_at.strftime("%Y-%b-%d")%></p>
+      </div>
+      <div>
+        <p class="">Amount: $<%= spend.amount%></p>
+        <%if can? :destroy, spend%>
+          <%=button_to "Delete", group_spending_path(group_id: @group.id, id: spend.id), method: :delete, class:"btn delete-btn"%>
+        <%end%>
+      </div>
+      </div>
+    <%end%>
+  <%else%>
+    <p class="">There are no transactions for this category</p>
+  <%end%>
+  <div class="add-btn-con container">
+    <%= link_to "Add Expense",  new_group_spending_path(@group), class: "add-button"%>
+  </div>
