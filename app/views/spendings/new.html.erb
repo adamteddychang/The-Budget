@@ -1,0 +1,19 @@
+<%= form_with model: [@group, @group.spendings.create], class:"input-form", data: { turbo: "false" }  do |f|%>
+
+
+
+
+<div class="">
+  <%= f.text_field :name,required: true, class:"", placeholder: "Name", id: ""%><br>
+</div>
+
+
+
+<div class="">
+  <%= f.number_field :amount ,  class:"" , required: true, placeholder: 'Amount',  min: 1%><br>
+</div>
+
+<%= f.submit "Create Spending", class:"", data: { turbo: "false" } %>
+
+
+<%end%>
