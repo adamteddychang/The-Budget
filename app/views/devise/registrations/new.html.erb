@@ -11,16 +11,16 @@
   <section class="d-flex flex-column">
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="mb-0">
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Full Name', class:'login-form' %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name",id:'signup-name', placeholder: 'Full Name', class:'login-form' %>
     </div>
     <div class="mb-0">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:'login-form' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",id:'signup-email', placeholder: "Email", class:'login-form' %>
     </div>
     <div class="mb-0">
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password(6 characters minimum)", class:'login-form' %>
+      <%= f.password_field :password, autocomplete: "new-password",id:'signup-pass', placeholder: "New Password(6 characters minimum)", class:'login-form' %>
     </div>
     <div class="mb-0">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm your password", class:'login-form' %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",id:'signup-pass2', placeholder: "Confirm your password", class:'login-form' %>
     </div>
     <div class="text-center">
     </div>

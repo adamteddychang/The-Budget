@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :groups, dependent: :destroy
   has_many :expenditures, dependent: :destroy
 
-  # validates :name, presence: true, length: { minimum: 5 }
+  validates :name, presence: true, length: { minimum: 3 }
 
   def set_role
     update(role: 'user')
