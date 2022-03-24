@@ -1,0 +1,7 @@
+<% if user_signed_in?%>
+
+    <div class="navbar-nav">
+    
+      <%= link_to 'Logout', '/users/sign_out', class: "nav-link active" %>
+    </div>
+  <%end%>

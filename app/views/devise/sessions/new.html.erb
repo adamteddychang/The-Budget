@@ -1,0 +1,25 @@
+  <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid justify-content-between">
+    <div class="d-flex align-items-center">
+      <a href="/"><i class="fa fa-arrow-left"></i></a>
+    </div>
+    <h1 class= 'navbar-brand' >LOGIN</h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.submit "Log in", id:'login' %>
+    </div>
+  </nav>
+  <section class="d-flex flex-column">
+    <div class="mb-0 ">
+    
+      <%= f.email_field :email, id:'loginemail', autofocus: true, autocomplete: "email", placeholder: "Email", class:'login-form' %>
+    </div>
+    <div class="mb-0">
+      <%= f.password_field :password, id:"loginpass", autocomplete: "current-password", placeholder: "Password", class:"login-form" %>
+    </div>
+    <div class="text-center">
+    <%= link_to "Forgot your password?", new_password_path(resource_name),id:'forgot-ps' %><br />
+    </div>
+  <% end %>
+    <p class="notice text-center"><%= notice %><%=alert%></p>
+
+</section>

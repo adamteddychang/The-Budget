@@ -1,0 +1,24 @@
+  <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid justify-content-between">
+    <div>
+    </div>
+    <h1 class= 'navbar-brand' >ADD CATEGORY</h1>
+    <%= render 'layouts/navbar'%>
+  </div>
+</nav>
+<p class="notice text-center"><%= notice %></p>
+<p class="alert text-center"><%= alert %></p>
+<h2 class="text-center">Add Category</h2>
+<section class="d-flex flex-column align-items-center">
+  <%= form_with model: @group, class:"input-form"  do |f|%>
+    <div class="mb-3 ">
+      <%= f.text_field :name,  required: true, placeholder: "Name", class:'form-control', id:'name'%><br>
+    </div>
+    <div class="mb-3 ">
+      <%= f.text_field :icon, required: true,type:'url', required:'true', class:'form-control', placeholder: "Image Link"%>
+    </div>
+    <div class="mb-3 text-center">
+      <%= f.submit "Create Category", class:"btn btn-primary" %>
+    </div>
+  <%end%>
+</section>
