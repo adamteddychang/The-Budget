@@ -1,32 +1,36 @@
 require 'rails_helper'
 
-RSpec.feature 'Group Index', type: :feature do
-  before(:each) do
-    @user = User.create(name: 'Example', email: 'hello@hello.com', password: 'password')
-    @group = Group.create(name: 'Shopping', icon: 'https://image.com', user_id: @user.id)
-    visit user_session_path
-    fill_in placeholder: 'Email', with: 'hello@hello.com'
-    fill_in placeholder: 'Password', with: 'password'
+RSpec.describe 'groups index page', type: :feature do
+  before do
+    visit '/'
+    click_link 'LOG IN'
+    @user = User.create!(email: 'user@email.com', name: 'User Name', password: '123456', id: 1)
+    @user.save
+    login_as(@user, scope: :user)
+
+    fill_in 'Email', with: 'user@email.com'
+    fill_in 'Password', with: '123456'
     click_button 'Log in'
   end
-
-  it 'Login successfully' do
-    expect(page).to have_current_path(root_path)
+  it 'can log in' do
+    expect(page).to have_content 'CATEGORIES'
   end
 
-  it 'Show Categories' do
-    expect(page).to have_content 'Categories'
+  it 'Login succesfully' do
+    expect(page).to have_current_path('/')
   end
 
-  # it 'show category name' do
-  #   expect(page).to have_content @group.name
-  # end
+  it 'can add category' do
+    click_on 'Add Category'
 
-  # it 'show category icon' do
-  #   expect(page).to have_selector('img')
-  # end
-  # it 'Navigate to the create category' do
-  #   click_link('Add Category')
-  #   expect(page).to have_current_path(new_group_path)
-  # end
+    expect(page).to have_content 'Add Category'
+  end
+
+  it 'can add category' do
+    click_on 'Add Category'
+    fill_in 'Name', with: 'Category1'
+    fill_in 'Image Link', with: 'https://googleimage.com'
+    click_on 'Create Category'
+    expect(page).to have_content 'Category1'
+  end
 end

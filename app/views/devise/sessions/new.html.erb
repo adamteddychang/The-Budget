@@ -10,10 +10,11 @@
   </nav>
   <section class="d-flex flex-column">
     <div class="mb-0 ">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:'login-form' %>
+    
+      <%= f.email_field :email, id:'loginemail', autofocus: true, autocomplete: "email", placeholder: "Email", class:'login-form' %>
     </div>
     <div class="mb-0">
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", id:"loginpass", class:"login-form" %>
+      <%= f.password_field :password, id:"loginpass", autocomplete: "current-password", placeholder: "Password", class:"login-form" %>
     </div>
     <div class="text-center">
     <%= link_to "Forgot your password?", new_password_path(resource_name),id:'forgot-ps' %><br />

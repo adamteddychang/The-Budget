@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User index page', type: :feature do
   describe 'login' do
     before(:each) do
-      User.create! password: '123456', email: 'user@email.com', name: 'User Name'
+      @user = User.create!(email: 'user@email.com', name: 'User Name', password: '123456', id: 1)
       visit '/users/sign_in'
     end
 
