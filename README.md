@@ -12,7 +12,7 @@
 
 ---
 
-[Live Link] (https://the--budget.herokuapp.com/)
+[Live Link](https://the--budget.herokuapp.com/)
 ## Getting Started
 
 > To get a local copy up and running please follow these steps:
