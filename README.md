@@ -10,7 +10,10 @@
 - Git
 - Postgresql
 
+
 ---
+
+![Screenshot 2022-04-27 at 11 34 54](https://user-images.githubusercontent.com/63560332/165489102-2e71116a-8bd6-4f7e-9c3f-2a7b7e1e9f9d.png)
 
 [Live Link](https://the--budget.herokuapp.com/)
 ## Getting Started
